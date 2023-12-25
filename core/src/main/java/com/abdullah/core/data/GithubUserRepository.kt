@@ -90,7 +90,7 @@ class GithubUserRepository @Inject constructor(
     }
 
     override fun getFavoriteUserByUsername(username: String): Flow<GithubUser?> {
-        return localDataSource!!.getUserByUsername(username).map {
+        return localDataSource.getUserByUsername(username).map {
             if(it != null){
                 DataMapper.mapEntityToDomain(it)
             }else{
