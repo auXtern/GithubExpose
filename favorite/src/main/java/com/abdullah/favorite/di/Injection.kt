@@ -12,7 +12,8 @@ import com.abdullah.core.utils.AppExecutors
 
 object Injection {
     fun provideGithubUserUseCase(context: Context) : GithubUserUseCase {
-        val apiService = ApiConfig.provideApiService()
+        val apiClient = ApiConfig.provideOkHttpClient()
+        val apiService = ApiConfig.provideApiService(apiClient)
         val remoteDataSource = RemoteDataSource(apiService)
 
         val githubUserDao = GithubUserDatabase.getInstance(context).githubUserDao()
