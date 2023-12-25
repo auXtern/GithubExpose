@@ -1,0 +1,10 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.GithubExpose" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/primary</item>
+         <item name="backgroundColor">@color/light</item>
+    </style>
+
+    <style name="Theme.GithubExpose" parent="Base.Theme.GithubExpose" />
+</resources>

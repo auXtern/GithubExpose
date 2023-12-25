@@ -1,0 +1,4 @@
+<resources>
+    <string name="text_username">{username}</string>
+    <string name="text_userid">{user_id}</string>
+</resources>
