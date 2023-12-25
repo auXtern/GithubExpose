@@ -16,13 +16,20 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
-        buildConfigField("String", "KEY", "\"token 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\"")
+        buildConfigField("String", "KEY", "\"\"")
         buildConfigField("String", "BASEURL", "\"https://api.github.com\"")
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+        debug {
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -60,6 +67,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.6.1")
     ksp("androidx.room:room-compiler:2.6.1")
     androidTestImplementation("androidx.room:room-testing:2.6.1")
+
+    implementation("net.zetetic:android-database-sqlcipher:4.5.3")
+    implementation("androidx.sqlite:sqlite-ktx:2.4.0")
 
     // Retrofit
     implementation("com.squareup.retrofit2:retrofit:2.9.0")

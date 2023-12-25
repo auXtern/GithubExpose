@@ -80,9 +80,7 @@ class FollowFragment : Fragment() {
             adapter.submitList(githubUserList)
             binding.rvFollow.adapter = adapter
             adapter.setOnItemClickCallback(object : UserAdapter.OnItemClickCallback {
-                override fun onItemClicked(data: GithubUser) {
-                    return
-                }
+                override fun onItemClicked(data: GithubUser) {}
             })
         }
     }

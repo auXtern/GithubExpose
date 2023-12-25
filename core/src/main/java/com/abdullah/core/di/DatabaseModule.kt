@@ -14,13 +14,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class DatabaseModule {
-
     @Singleton
     @Provides
-    fun provideDatabase(@ApplicationContext context: Context): GithubUserDatabase = Room.databaseBuilder(
-        context,
-        GithubUserDatabase::class.java, "GithubUser.db"
-    ).fallbackToDestructiveMigration().build()
+    fun provideDatabase(@ApplicationContext context: Context): GithubUserDatabase =
+        GithubUserDatabase.getInstance(context)
 
     @Provides
     fun provideGithubUserDao(database: GithubUserDatabase): GithubUserDao = database.githubUserDao()

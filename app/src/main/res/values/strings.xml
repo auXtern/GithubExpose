@@ -1,12 +1,12 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Github Expose</string>
     <string name="search_hint">Saya ingin mencari…</string>
     <string name="text_username">{username}</string>
     <string name="text_userid">{user_id}</string>
     <string name="text_full_name">{nama lengkap}</string>
 
-    <string name="tab_text_1">%1$d Followers</string>
-    <string name="tab_text_2">%1$d Following</string>
+    <string name="tab_text_1" tools:ignore="PluralsCandidate">%1$d Followers</string>
+    <string name="tab_text_2" tools:ignore="PluralsCandidate">%1$d Following</string>
     <string name="list_error_empty">Belum ada data yang tersedia!</string>
     <string name="text_back">Tombol Kembali</string>
     <string name="text_btn_favorite">Tombol Favorite</string>

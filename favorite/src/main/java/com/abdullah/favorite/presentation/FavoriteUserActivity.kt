@@ -49,7 +49,7 @@ class FavoriteUserActivity : AppCompatActivity() {
             showLoading(false)
         }
 
-        onBackPressedDispatcher.addCallback() {
+        onBackPressedDispatcher.addCallback {
             backToHome()
         }
 
